@@ -1,24 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route } from "react-router-dom";
+
+import Createform from "./pages/Createform";
+import HomePage from "./pages/HomePage";
+import Updateform from "./pages/Updateform";
+import { Stepper } from "@mui/material";
+import stepperPage from "./pages/stepperPage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/createnew" element={<Createform />} />
+        <Route path="/update/:id" element={<Updateform />} />
+        <Route path="/stepper" element={<stepperPage />} />
+      </Routes>
+    </>
   );
 }
 
